@@ -176,7 +176,7 @@ export default function Survey1() {
 
           <ContentText>Below, you will see a 3D rendering of the sunglasses design. You can rotate and zoom in/out of the image. After taking a look at the 3D image, you may answer the following questions.</ContentText>
 
-          <ContentText>Please review the sunglasses design.</ContentText>
+          <ContentText>Please review the sunglasses design. It will take some time to load.</ContentText>
 
           <Canvas
             camera={{ 

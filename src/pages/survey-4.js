@@ -25,7 +25,6 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: auto;
   width: auto;
-  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;

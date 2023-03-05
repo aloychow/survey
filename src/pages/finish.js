@@ -19,6 +19,7 @@ const MainContainer = styled.div`
 `
 
 const ContentText = styled.div`
+color: #000;
   font-size: 1.5rem;
   text-align: center;
   
@@ -26,6 +27,7 @@ const ContentText = styled.div`
 `;
 
 const StartButton = styled.button`
+  color: #000;
   font-size: 1.5rem;
   background: #F3F8FE;
   padding: 0.75rem;

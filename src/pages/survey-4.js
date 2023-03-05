@@ -52,6 +52,7 @@ const QuestionContainer = styled.div`
 `;
 
 const ContentText = styled.div`
+  color: #000;
   font-size: 1.125rem;
   font-weight: 400;
   text-align: left;

@@ -22,7 +22,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   
-  padding: 3rem;
+  padding: 8rem 3rem;
 `
 
 const ContentText = styled.div`

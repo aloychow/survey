@@ -28,8 +28,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   
-  padding: 1.5rem;
-  padding-top: 3rem;
+  padding: 8rem 1.5rem;
   `
 const SubContainer = styled.div`
   width: 100%;

@@ -8,14 +8,14 @@ import Link from "next/link";
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  background: #F3F8FE;
+  // background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
   
-  padding: 3rem;
+  padding: 8rem 3rem;
 `
 
 const ContentText = styled.div`

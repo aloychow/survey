@@ -15,11 +15,11 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   
-  padding: 3rem;
+  padding: 8rem 3rem;
 `
 
 const ContentText = styled.div`
-color: #000;
+  color: #000;
   font-size: 1.5rem;
   text-align: center;
   

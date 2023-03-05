@@ -1,12 +1,15 @@
 import Head from 'next/head'
+
 import styled from 'styled-components'
 import Link from "next/link";
 
 const MainContainer = styled.div`
+  color: #000000;
   display: flex;
   flex-direction: column;
   height: auto;
   width: 100vw;
+  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
@@ -15,7 +18,7 @@ const MainContainer = styled.div`
 `
 
 const ContentText = styled.div`
-  color: #000;
+  color: #000000;
   font-size: 1.5rem;
   text-align: center;
   
@@ -23,7 +26,7 @@ const ContentText = styled.div`
 `;
 
 const StartButton = styled.button`
-  color: #000;
+  color: #000000;
   font-size: 1.5rem;
   background: #F3F8FE;
   padding: 0.75rem;

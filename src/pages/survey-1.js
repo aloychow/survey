@@ -71,7 +71,7 @@ export default function Survey1() {
       </Head>
       
       <MainContainer>
-        <h1 style={{fontSize:"2rem", textAlign:"center"}}>General Questions</h1>
+        <h1 style={{fontSize:"1.5rem", textAlign:"center"}}>General Questions</h1>
         <ContentText>1. How old are you?</ContentText>
 
         <FormControl>

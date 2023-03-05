@@ -1,19 +1,13 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import * as React from 'react';
+import { useRouter } from "next/router";
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-
-import Image from 'next/image'
-import Glasses from '../../public/images/glasses.png'
-import Sunglasses1 from '../../public/images/sunglasses1.png'
-import Sunglasses2 from '../../public/images/sunglasses2.png'
-import Sunglasses3 from '../../public/images/sunglasses3.png'
 
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
@@ -23,6 +17,7 @@ import TextField from '@mui/material/TextField';
 
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 
 const MainContainer = styled.div`
@@ -66,10 +61,8 @@ const ContentText = styled.div`
 `;
 
 const ImageIcon = styled.div`
-    // padding: 2rem;
-    // padding-left: 0;
-    padding-top: 2rem;
-    align-items: center;
+    padding: 2rem;
+    padding-left: 0;
 
 `;
 
@@ -96,65 +89,73 @@ function getLabelText(value) {
 export default function Survey1() {
   
   const [hover, setHover] = React.useState(-1);
+
+  const [ARQuestion1, setARQuestion1] = React.useState("");
+  const [ARQuestion2, setARQuestion2] = React.useState("");
+  const [ARQuestion3, setARQuestion3] = React.useState("");
+  const [ARQuestion4, setARQuestion4] = React.useState("");
   
-  const [twoDQuestion1, setTwoDQuestion1] = React.useState("");
-  const [twoDQuestion2, setTwoDQuestion2] = React.useState("");
-  const [twoDQuestion3, setTwoDQuestion3] = React.useState("");
-  const [twoDQuestion4, setTwoDQuestion4] = React.useState("");
+  const [ARQuestion5, setARQuestion5] = React.useState(0);
   
-  const [twoDQuestion5, setTwoDQuestion5] = React.useState(0);
-  
-  const [twoDQuestion6, setTwoDQuestion6] = React.useState("");
+  const [ARQuestion6, setARQuestion6] = React.useState("");
   
   const [correct, setCorrect] = React.useState(false);
   
   const [data, setData] = React.useState([]);
   
   const handleQ1 = (value) => {
-    setTwoDQuestion1(value);
+    setARQuestion1(value);
   }
   
   const handleQ2 = (value) => {
-    setTwoDQuestion2(value);
+    setARQuestion2(value);
   }
   
   const handleQ3 = (value) => {
-    setTwoDQuestion3(value);
+    setARQuestion3(value);
   }
   
   const handleQ4 = (value) => {
-    setTwoDQuestion4(value);
+    setARQuestion4(value);
   }
   
   const handleQ5 = (value) => {
-    setTwoDQuestion5(value);
+    setARQuestion5(value);
   }
   
   const handleQ6 = (event) => {
-    setTwoDQuestion6(event.target.value);
+    setARQuestion6(event.target.value);
   }
   
   React.useEffect(() => {
     if (
-      twoDQuestion1 != "" & 
-      twoDQuestion2 != "" &
-      twoDQuestion3 != "" & 
-      twoDQuestion4 != "" & 
-      twoDQuestion5 != 0
+      ARQuestion1 != "" & 
+      ARQuestion2 != "" &
+      ARQuestion3 != "" & 
+      ARQuestion4 != "" & 
+      ARQuestion5 != 0
     ) {
-      setData([oldData[0], oldData[1], twoDQuestion1, twoDQuestion2, twoDQuestion3, twoDQuestion4, twoDQuestion5, twoDQuestion6])
+   
       setCorrect(true);
+      
+      const tempArr = [];
+      for (let i = 0; i < 14; i++) {
+        tempArr.push(oldData[i]);
+      }
+      tempArr.push(String(ARQuestion1), String(ARQuestion2), String(ARQuestion3), String(ARQuestion4), String(ARQuestion5), String(ARQuestion6))
+      setData(tempArr);
+
     }
-  }, [twoDQuestion1, twoDQuestion2, twoDQuestion3, twoDQuestion4, twoDQuestion5, twoDQuestion6, correct])
-  
+  }, [ARQuestion1, ARQuestion2, ARQuestion3, ARQuestion4, ARQuestion5, ARQuestion6, correct])
   
   React.useEffect(() => {
     // console.log(data);
   }, data)
   
-  
   const router = useRouter();
   const oldData = router.query;
+  
+  
   
   return (
     <>
@@ -164,51 +165,23 @@ export default function Survey1() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <MainContainer>
         <SubContainer>
-          <h1 style={{fontSize:"1.5rem", paddingBottom:"1rem"}}>Product Scenario</h1>
-          
-          <ContentText>
-            The story, all names, characters, and incidents portrayed in this
-            example are fictitious. No identification with actual persons
-            (living or deceased), places, buildings, and products is intended or
-            should be inferred.
-          </ContentText>
+          <h1 style={{ fontSize: "1.5rem", paddingBottom: "1rem"}}>Product Scenario (AR)</h1>
+
+          <ContentText>Below, you will find a link to an augmented reality Instagram filter where you can try out the sunglasses yourself. After trying out the augmented reality filter, you may answer the following questions.</ContentText>
+
+          <ContentText>Please review the sunglasses design.</ContentText>
 
           <ContentText>
-            Our company, ClearSight Inc., is testing a new product design for
-            our sunglasses lineup. We will show you the current design, then ask you for feedback.
+            <Link style={{textDecoration:"underline", color:"red"}} href="https://www.instagram.com/ar/586644579752457/" rel="noopener noreferrer" target="_blank">
+              Augmented Reality Sunglasses Link
+            </Link>
           </ContentText>
 
-            <ImageIcon>
-              <Image
-                src={Sunglasses1}
-                alt="sunglasses"
-                width={400}
-                height={250}
-              />
-            </ImageIcon>
-            
-            <ImageIcon>
-              <Image
-                src={Sunglasses2}
-                alt="sunglasses"
-                width={400}
-                height={180}
-              />
-            </ImageIcon>
-            
-            <ImageIcon>
-              <Image
-                src={Sunglasses3}
-                alt="sunglasses"
-                width={400}
-                height={180}
-              />
-            </ImageIcon>
-        
-            <QuestionContainer>
+
+          <QuestionContainer>
             <ContentText>The design of the sunglasses appeals to me.</ContentText>
             
             <FormControl>
@@ -294,7 +267,7 @@ export default function Survey1() {
             >
               <Rating
                 name="hover-feedback"
-                value={twoDQuestion5}
+                value={ARQuestion5}
                 max={10}
                 size="large"
                 getLabelText={getLabelText}
@@ -308,8 +281,8 @@ export default function Survey1() {
                   <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
                 }
               />
-              {twoDQuestion5 !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : twoDQuestion5]}</Box>
+              {ARQuestion5 !== null && (
+                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : ARQuestion5]}</Box>
               )}
             </Box>
           </QuestionContainer>
@@ -329,13 +302,13 @@ export default function Survey1() {
 
           <br />
           <br />
-          
+
           { 
           correct 
           ?
           <Link style={{ textDecoration: "none" }}
             href={{
-              pathname: "survey-3",
+              pathname: "survey-5",
               query: data, // the data
             }}
         

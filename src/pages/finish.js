@@ -49,15 +49,9 @@ export default function About() {
       </Head>
       
       <MainContainer>
-        <h1>Welcome</h1>
-        <ContentText>This survey aims to understand and study the effectiveness of different forms of visualisations on consumers, and should take no more than 10 minutes to complete.</ContentText>
-        <ContentText><b>This survey requires a mobile phone or tablet with Instagram installed on it. Computers cannot be used.</b></ContentText>
-        <ContentText style={{fontSize:"1.5rem"}}>* Your answers are completely anonymous and will solely be used for research purposes.</ContentText>
-        
-        <Link href={`/survey-1`} style={{ textDecoration: "none" }}>
-          <StartButton>Start Survey</StartButton>
-        </Link>
-        
+        <h1>Thank you!</h1>
+        <ContentText>You have come to the end of the survey. You may now close this tab.</ContentText>
+
       </MainContainer>
     </>
   )

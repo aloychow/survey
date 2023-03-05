@@ -17,16 +17,16 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background: #fffff;
+  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
   
-  padding: 10rem;
+  padding: 3rem;
 `
 
 const ContentText = styled.div`
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
   
@@ -36,6 +36,29 @@ const ContentText = styled.div`
 
 
 export default function Survey1() {
+  
+  const [age, setAge] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  
+  const [correct, setCorrect] = React.useState(false);
+  
+  const [data, setData] = React.useState([]);
+  
+  
+  const handleAge = (event) => {
+    setAge(event.target.value);
+  }
+  
+  const handleGender = (event) => {
+    setGender(event.target.value);
+  }
+  
+  React.useEffect(() => {
+    if (age != "" & gender != "") {
+      setData([age, gender])
+      setCorrect(true);
+    }
+  }, [age, gender, correct])
   
   return (
     <>
@@ -47,7 +70,7 @@ export default function Survey1() {
       </Head>
       
       <MainContainer>
-        <h1 style={{fontSize:"2.5rem"}}>General Questions</h1>
+        <h1 style={{fontSize:"2rem", textAlign:"center"}}>General Questions</h1>
         <ContentText>1. How old are you?</ContentText>
 
         <FormControl>
@@ -55,13 +78,13 @@ export default function Survey1() {
             aria-labelledby="demo-radio-buttons-group-label"
             name="age"
           >
-            <FormControlLabel value="<18" control={<Radio />} label="Under 18" />
-            <FormControlLabel value="18-24" control={<Radio />} label="18 - 24" />
-            <FormControlLabel value="25-34" control={<Radio />} label="25 - 34" />
-            <FormControlLabel value="35-44" control={<Radio />} label="25 - 44" />
-            <FormControlLabel value="45-54" control={<Radio />} label="45 - 54" />
-            <FormControlLabel value="55-64" control={<Radio />} label="55 - 64" />
-            <FormControlLabel value=">65" control={<Radio />} label="65 and over" />
+            <FormControlLabel value="<18" control={<Radio />} label="Under 18" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value="18-24" control={<Radio />} label="18 - 24" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value="25-34" control={<Radio />} label="25 - 34" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value="35-44" control={<Radio />} label="35 - 44" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value="45-54" control={<Radio />} label="45 - 54" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value="55-64" control={<Radio />} label="55 - 64" onClick={(event)=>handleAge(event)}/>
+            <FormControlLabel value=">65" control={<Radio />} label="65 and over" onClick={(event)=>handleAge(event)}/>
           </RadioGroup>
         </FormControl>
         
@@ -72,21 +95,35 @@ export default function Survey1() {
             aria-labelledby="demo-radio-buttons-group-label"
             name="gender"
           >
-            <FormControlLabel value="M" control={<Radio />} label="Male" />
-            <FormControlLabel value="F" control={<Radio />} label="Female" />
-            <FormControlLabel value="O" control={<Radio />} label="Other" />
+            <FormControlLabel value="M" control={<Radio />} label="Male" onClick={(event)=>handleGender(event)}/>
+            <FormControlLabel value="F" control={<Radio />} label="Female" onClick={(event)=>handleGender(event)}/>
+            <FormControlLabel value="O" control={<Radio />} label="Other" onClick={(event)=>handleGender(event)}/>
           </RadioGroup>
         </FormControl>
         
         <br />
         <br />
         
-        <Link href={`/survey-2`} style={{ textDecoration: "none" }}>
-          <Button variant="contained" endIcon={<ArrowForwardIcon />}>
+        { 
+          correct 
+          ?
+          <Link style={{ textDecoration: "none" }}
+            href={{
+              pathname: "survey-2",
+              query: data, // the data
+            }}
+        
+          >
+            <Button variant="contained" endIcon={<ArrowForwardIcon />}>
+              Next
+            </Button>
+          </Link>
+          :
+          <Button disabled variant="contained" onClick={()=>handleClick()} endIcon={<ArrowForwardIcon />}>
             Next
           </Button>
-        </Link>
-        
+        }
+ 
       </MainContainer>
     </>
   )

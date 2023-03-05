@@ -30,6 +30,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: auto;
   width: auto;
+  color: #000000;
+  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
@@ -37,6 +39,8 @@ const MainContainer = styled.div`
   padding: 8rem 1.5rem;
   `
 const SubContainer = styled.div`
+  color: #000000;
+  background: #F3F8FE;
   width: 100%;
   // max-width: 20rem;
   
@@ -55,7 +59,7 @@ const QuestionContainer = styled.div`
 `;
 
 const ContentText = styled.div`
-  color: #000;  
+  color: #000000;  
   font-size: 1.125rem;
   font-weight: 400;
   text-align: left;

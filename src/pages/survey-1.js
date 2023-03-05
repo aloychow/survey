@@ -17,6 +17,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  color: #000000;
+  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
@@ -25,7 +27,7 @@ const MainContainer = styled.div`
 `
 
 const ContentText = styled.div`
-  color: #000;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;

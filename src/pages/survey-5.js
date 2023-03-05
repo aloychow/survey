@@ -26,6 +26,8 @@ const MainContainer = styled.div`
   width: auto;
   justify-content: center;
   align-items: center;
+  color: #000000;
+  background: #F3F8FE;
   
   padding: 8rem 1.5rem;
   `
@@ -54,7 +56,7 @@ const CheckboxContainer = styled.div`
 `;
 
 const ContentText = styled.div`
-  color: #000;
+  color: #000000;
   font-size: 1.125rem;
   font-weight: 400;
   text-align: left;

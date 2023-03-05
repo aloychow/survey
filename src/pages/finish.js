@@ -8,8 +8,10 @@ import Link from "next/link";
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   width: 100vw;
+  color: #000000;
+  background: #F3F8FE;
   
   justify-content: center;
   align-items: center;
@@ -18,7 +20,7 @@ const MainContainer = styled.div`
 `
 
 const ContentText = styled.div`
-  color: #000;
+  color: #000000;
   font-size: 1.5rem;
   text-align: center;
   

@@ -189,7 +189,7 @@ export default function Survey1() {
                 src={Sunglasses1}
                 alt="sunglasses"
                 width={400}
-                height={250}
+                height={200}
               />
             </ImageIcon>
             

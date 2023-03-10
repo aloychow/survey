@@ -182,8 +182,7 @@ export default function Survey1() {
           <ContentText>
             Our company, Pear Inc., is testing a new product design for
             our phone lineup. We will show you the current design, then ask you for feedback.
-            Note: Only focus on the design, and do not take the Operating System (OS) into account. 
-            Simply assume it is running your current phone\'s OS.
+            Note that only focus on the design, and do not take the Operating System into account. 
           </ContentText>
 
             <ImageIcon>

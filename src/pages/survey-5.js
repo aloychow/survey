@@ -312,7 +312,7 @@ export default function Survey1() {
         "age": data[0], "gender": data[1],
         "2D_1": data[2], "2D_2": data[3], "2D_3": data[4], "2D_4": data[5], "2D_5": data[6], "2D_6": data[7],
         "3D_1": data[8], "3D_2": data[9], "3D_3": data[10], "3D_4": data[11], "3D_5": data[12], "3D_6": data[13],
-        "AR_1": data[14], "AR_2": data[15], "AR_3": data[16], "AR_4": data[17], "5": data[18], "AR_6": data[19],
+        "AR_1": data[14], "AR_2": data[15], "AR_3": data[16], "AR_4": data[17], "AR_5": data[18], "AR_6": data[19],
         "choice_1": data[20], "choice_2": data[21], "choice_3": data[22],
         "2D_reason_1": data[23], "2D_reason_2": data[24], "2D_reason_3": data[25], "2D_reason_4": data[26], "2D_reason_5": data[27], "2D_reason_6": data[28],
         "3D_reason_1": data[29], "3D_reason_2": data[30], "3D_reason_3": data[31], "3D_reason_4": data[32], "3D_reason_5": data[33], "3D_reason_6": data[34], "3D_reason_7": data[35], "3D_reason_8": data[36],

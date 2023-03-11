@@ -213,7 +213,7 @@ export default function Survey1() {
             </ImageIcon>
         
             <QuestionContainer>
-            <ContentText>The design of the sunglasses appeals to me.</ContentText>
+            <ContentText>The design of the phone appeals to me.</ContentText>
             
             <FormControl>
               <RadioGroup
